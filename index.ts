@@ -3,12 +3,16 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import userRoutes from './routes/usuario';
 import actuacionRoutes from './routes/actuacion';
+import cors from 'cors';
 
 const server = new Server();
 
 // Bdy parser
 server.app.use(bodyParser.urlencoded({ extended: true }));
 server.app.use(bodyParser.json());
+
+// Configuración CORS
+server.app.use(cors({ origin: true, credentials: true }));
 
 // Rutas de la app
 server.app.use('/user', userRoutes);
