@@ -7,12 +7,14 @@ const server_1 = __importDefault(require("./classes/server"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const usuario_1 = __importDefault(require("./routes/usuario"));
+const actuacion_1 = __importDefault(require("./routes/actuacion"));
 const server = new server_1.default();
 // Bdy parser
 server.app.use(body_parser_1.default.urlencoded({ extended: true }));
 server.app.use(body_parser_1.default.json());
 // Rutas de la app
 server.app.use('/user', usuario_1.default);
+server.app.use('/actuacion', actuacion_1.default);
 // Conexión con MongoDB
 mongoose_1.default.connect(server.urlDB, { useNewUrlParser: true, useCreateIndex: true }, (err) => {
     if (err)

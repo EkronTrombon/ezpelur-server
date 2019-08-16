@@ -2,6 +2,7 @@ import Server from './classes/server';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import userRoutes from './routes/usuario';
+import actuacionRoutes from './routes/actuacion';
 
 const server = new Server();
 
@@ -11,6 +12,7 @@ server.app.use(bodyParser.json());
 
 // Rutas de la app
 server.app.use('/user', userRoutes);
+server.app.use('/actuacion', actuacionRoutes);
 
 // Conexión con MongoDB
 mongoose.connect(server.urlDB, { useNewUrlParser: true, useCreateIndex: true }, (err) => {
