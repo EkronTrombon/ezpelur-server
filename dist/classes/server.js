@@ -14,7 +14,7 @@ class Server {
             this.urlDB = 'mongodb://localhost:27017/ezpelur';
         }
         else {
-            // this.urlDB = 'mongodb://localhost:27017/ezpelur';
+            this.urlDB = 'mongodb+srv://ekron:unLAWeKMpZPcmy27@cluster0-teuj3.mongodb.net/ezpelur';
         }
     }
     start(callback) {
