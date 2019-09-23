@@ -9,6 +9,7 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const usuario_1 = __importDefault(require("./routes/usuario"));
 const actuacion_1 = __importDefault(require("./routes/actuacion"));
 const cors_1 = __importDefault(require("cors"));
+const partitura_1 = __importDefault(require("./routes/partitura"));
 const server = new server_1.default();
 // Bdy parser
 server.app.use(body_parser_1.default.urlencoded({ extended: true }));
@@ -18,6 +19,7 @@ server.app.use(cors_1.default({ origin: true, credentials: true }));
 // Rutas de la app
 server.app.use('/user', usuario_1.default);
 server.app.use('/actuacion', actuacion_1.default);
+server.app.use('/partitura', partitura_1.default);
 // Conexión con MongoDB
 mongoose_1.default.connect(server.urlDB, { useNewUrlParser: true, useCreateIndex: true }, (err) => {
     if (err)

@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import userRoutes from './routes/usuario';
 import actuacionRoutes from './routes/actuacion';
 import cors from 'cors';
+import partituraRoutes from './routes/partitura';
 
 const server = new Server();
 
@@ -17,6 +18,7 @@ server.app.use(cors({ origin: true, credentials: true }));
 // Rutas de la app
 server.app.use('/user', userRoutes);
 server.app.use('/actuacion', actuacionRoutes);
+server.app.use('/partitura', partituraRoutes);
 
 // Conexión con MongoDB
 mongoose.connect(server.urlDB, { useNewUrlParser: true, useCreateIndex: true }, (err) => {

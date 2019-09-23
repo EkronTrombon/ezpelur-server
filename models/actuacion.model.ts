@@ -1,5 +1,4 @@
 import { Schema, model, Document } from 'mongoose';
-import { Usuario } from './usuario.model';
 
 const actuacionSchema = new Schema({
     fecha: { type: Date, default: new Date(), required: [true, 'La fecha de la actuación es obligtoria'] },
