@@ -40,7 +40,8 @@ userRoutes.post('/create', (req: Request, res: Response) => {
         email: req.body.email,
         tfno: req.body.tfno,
         instrumento: req.body.instrumento,
-        instrumentoSec: req.body.instrumentoSec
+        instrumentoSec: req.body.instrumentoSec,
+        img: req.body.img
     };
     Usuario.create(user).then(userDB => {
         res.json({
@@ -64,7 +65,8 @@ userRoutes.post('/update/:id', (req: Request, res: Response) => {
         email: req.body.email,
         tfno: req.body.tfno,
         instrumento: req.body.instrumento,
-        instrumentoSec: req.body.instrumentoSec
+        instrumentoSec: req.body.instrumentoSec,
+        img: req.body.img
     };
     Usuario.findByIdAndUpdate(id, user, { new: true }, (err, usuarioDB) => {
         if (err) throw err;

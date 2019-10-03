@@ -5,6 +5,8 @@ import userRoutes from './routes/usuario';
 import actuacionRoutes from './routes/actuacion';
 import cors from 'cors';
 import partituraRoutes from './routes/partitura';
+import uploadRoutes from './routes/upload';
+import imgRoutes from './routes/imagenes';
 
 const server = new Server();
 
@@ -19,6 +21,8 @@ server.app.use(cors({ origin: true, credentials: true }));
 server.app.use('/user', userRoutes);
 server.app.use('/actuacion', actuacionRoutes);
 server.app.use('/partitura', partituraRoutes);
+server.app.use('/upload', uploadRoutes);
+server.app.use('/img', imgRoutes);
 
 // Conexión con MongoDB
 mongoose.connect(server.urlDB, { useNewUrlParser: true, useCreateIndex: true }, (err) => {

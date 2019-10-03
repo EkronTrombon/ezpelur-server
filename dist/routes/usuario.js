@@ -40,7 +40,8 @@ userRoutes.post('/create', (req, res) => {
         email: req.body.email,
         tfno: req.body.tfno,
         instrumento: req.body.instrumento,
-        instrumentoSec: req.body.instrumentoSec
+        instrumentoSec: req.body.instrumentoSec,
+        img: req.body.img
     };
     usuario_model_1.Usuario.create(user).then(userDB => {
         res.json({
@@ -63,7 +64,8 @@ userRoutes.post('/update/:id', (req, res) => {
         email: req.body.email,
         tfno: req.body.tfno,
         instrumento: req.body.instrumento,
-        instrumentoSec: req.body.instrumentoSec
+        instrumentoSec: req.body.instrumentoSec,
+        img: req.body.img
     };
     usuario_model_1.Usuario.findByIdAndUpdate(id, user, { new: true }, (err, usuarioDB) => {
         if (err)

@@ -7,7 +7,8 @@ const usuarioSchema = new mongoose_1.Schema({
     email: { type: String, required: [true, 'El email es obligatorio'] },
     tfno: { type: String, required: [true, 'El teléfono es obligatorio'] },
     instrumento: { type: String, required: [true, 'El instrumento es obligatorio'] },
-    instrumentoSec: { type: String, required: false }
+    instrumentoSec: { type: String, required: false },
+    img: { type: String, required: false }
 });
 ;
 exports.Usuario = mongoose_1.model('Usuario', usuarioSchema);
