@@ -28,7 +28,7 @@ server.app.use('/img', imgRoutes);
 mongoose.connect(server.urlDB, { useNewUrlParser: true, useCreateIndex: true }, (err) => {
     if (err) throw err;
     console.log('Url actual: ', server.urlDB);
-    console.log('Base de datos ONLINE');
+    console.log('Base de datos ONLINE!!');
 });
 
 // Levantar el servidor express
