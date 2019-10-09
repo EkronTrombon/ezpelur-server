@@ -29,7 +29,7 @@ mongoose_1.default.connect(server.urlDB, { useNewUrlParser: true, useCreateIndex
     if (err)
         throw err;
     console.log('Url actual: ', server.urlDB);
-    console.log('Base de datos ONLINE');
+    console.log('Base de datos ONLINE!!');
 });
 // Levantar el servidor express
 server.start(() => {

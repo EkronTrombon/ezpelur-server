@@ -66,7 +66,7 @@ actuacionRoutes.post('/update/:id', (req, res) => {
 });
 actuacionRoutes.post('/delete/:id', (req, res) => {
     const id = req.params.id;
-    actuacion_model_1.Actuacion.findOneAndDelete(id, (err, actuacionBorrada) => {
+    actuacion_model_1.Actuacion.findByIdAndDelete(id, (err, actuacionBorrada) => {
         if (err)
             throw err;
         if (!actuacionBorrada) {
